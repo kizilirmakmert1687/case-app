@@ -8,6 +8,7 @@ kategorilere tıklayınca ise kategoride bulunan ürünler gelmektedir.
 ![Ekran görüntüsü 2023-06-19 130143](https://github.com/kizilirmakmert1687/case-app/assets/129321602/7e934076-872d-4202-b8d9-b9d627696c68)
 ![Ekran görüntüsü 2023-06-19 130117](https://github.com/kizilirmakmert1687/case-app/assets/129321602/3cc12bb7-a9d3-488a-8394-c52f78caa77c)
 ![Ekran görüntüsü 2023-06-19 130043](https://github.com/kizilirmakmert1687/case-app/assets/129321602/d52e31d3-b5c2-43db-bbc9-171e872740d5)
+![Ekran görüntüsü 2023-06-19 130013](https://github.com/kizilirmakmert1687/case-app/assets/129321602/238dcc44-e5d3-4fe6-b2b3-67d1d3e9b35f)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
