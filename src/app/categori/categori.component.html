@@ -1,0 +1,31 @@
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="exampleFormControlInput1" class="form-label">Kategori Ekle</label>
+        <input type="text" class="form-control"  [(ngModel)]="categoris.name" >
+      </div>
+      <div class="col-md-6">
+        <label for="exampleFormControlInput1" class="form-label">Alt Kategori Ekle</label>
+        <input type="text" class="form-control"  [(ngModel)]="altCategoris.altName">
+        <label for="exampleFormControlInput1" class="form-label">Kategori Ekle</label>
+        <div class="input-group">
+          <select class="form-select" [(ngModel)]="altCategoris.name">
+            <option *ngFor="let veri of catego" [value]="veri.name" >{{ veri.name }}</option>
+          </select>
+        </div>
+        
+          
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-6">
+        <button class="btn btn-primary" (click)="categoriAdd()">Kategori Ekle</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-primary" (click)="AltCategori()">Alt Kategori Ekle</button>
+      </div>
+    </div>
+  </div>
+  

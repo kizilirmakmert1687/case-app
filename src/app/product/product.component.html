@@ -1,0 +1,81 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Sidebar content -->
+        <div class="b-example-divider b-example-vr"></div>
+  
+        <div class="flex-shrink-0 p-3" style="width: 280px;">
+          <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+            <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-5 fw-semibold">KATEGORİLER</span>
+          </a>
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1" *ngFor="let veri of catego">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                {{veri.name}}
+              </button>
+              <div class="collapse show" id="home-collapse"  *ngFor="let product of altCatego">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" >
+                  <li><a class="link-body-emphasis d-inline-flex text-decoration-none rounded" *ngIf="product.name === veri.name" (click)="altCategoriSelect(product.id)"  >{{product.altName}}</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col-md-9">
+
+
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0"  *ngFor="let product of productAdd">
+              <div class="card" *ngIf="isTrue==false">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">FİYATI : {{product.productPrice}}</h6>
+                    <p class="card-text">Adet : {{product.productRice}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6" *ngFor="let product of searchResults">
+               <div class="card" *ngIf="isTrue==true">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">FİYATI : {{product.productPrice}}</h6>
+                    <p class="card-text">Adet : {{product.productRice}}</p>
+                 
+                </div>
+              </div> 
+            </div>
+          </div>
+
+
+
+
+        <!-- Card content -->
+        <!-- <div class="card" style="width: 18rem;" *ngFor="let product of productAdd">
+          <div class="card-body"   >
+            <h5 class="card-title">{{product.productName}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">FİYATI : {{product.productPrice}}</h6>
+            <p class="card-text">Adet : {{product.productRice}}</p>
+           
+          </div>
+        </div> -->
+        <!-- <div class="card" style="width: 18rem;" *ngFor="let product of searchResults" >
+            <div class="card-body"  >
+              <h5 class="card-title">{{product.productName}}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">FİYATI : {{product.productPrice}}</h6>
+              <p class="card-text">Adet : {{product.productRice}}</p>
+             
+            </div>
+          </div> -->
+      </div>
+
+        
+    </div>
+  </div>
+  
+
+  
+
+ 

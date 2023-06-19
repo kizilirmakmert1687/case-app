@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="input1">Ürün Adı</label>
+        <input type="text" id="input1" class="form-control" [(ngModel)]="productAdds.productName" >
+      </div>
+      <div class="col-md-6">
+        <label for="input2">Ürün Fiyatı</label>
+        <input type="text" id="input2" class="form-control"  [(ngModel)]="productAdds.productPrice" >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="input3">Ürün Miktar</label>
+        <input type="text" id="input3" class="form-control"  [(ngModel)]="productAdds.productRice">
+      </div>
+       <!-- <div class="col-md-6">
+        <label for="input4">Ürün Fotoğraf</label>
+        <input type="text" id="input4" class="form-control"  [(ngModel)]="productAdds.productİmage">
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="input5">Ürün Kategori</label>
+        <div class="input-group">
+            <select class="form-select" [(ngModel)]="productAdds.productCategori">
+              <option *ngFor="let veri of catego" [value]="veri.name" >{{ veri.name }}</option>
+            </select>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <label for="input6">Ürün Alt Kategori</label>
+        <div class="input-group">
+            <select class="form-select" [(ngModel)]="productAdds.productAltCategori">
+              <option *ngFor="let veri of altCatego" [value]="veri.altName" >{{ veri.altName }}</option>
+            </select>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-primary" (click)="productsAdd()">Ürün Ekleme</button>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">ürün adı</th>
+        <th scope="col">ürün fiyat</th>
+        <th scope="col">ürün miktar</th>
+        <th scope="col">ürün kategori</th>
+        <th scope="col">ürün alt kategori</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let veri of productAdd">
+        <th>{{veri.id}}</th>
+        <th>{{veri.productName}}</th>
+        <th>{{veri.productPrice}}</th>
+        <th>{{veri.productRice}}</th>
+        <th>{{veri.productCategori}}</th>
+        <th>{{veri.productAltCategori}}</th>
+        <!-- <th><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="productUpdate(veri.id)">
+            Güncelle
+          </button></th> -->
+          <th><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  (click)="productUpdate(veri.id)">Güncelle</button></th>
+        <th><button type="button" class="btn btn-danger" (click)="productDelete(veri.id)">Sil</button></th>
+
+
+        
+      </tr>
+    </tbody>
+  </table>
+
+  
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ürün Güncelleme</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                  <label for="input1">Ürün Adı</label>
+                  <input type="text" id="input1" class="form-control" [(ngModel)]="productName" >
+                </div>
+                <div class="col-md-6">
+                  <label for="input2">Ürün Fiyatı</label>
+                  <input type="text" id="input2" class="form-control"  [(ngModel)]="productPrice" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="input3">Ürün Miktar</label>
+                  <input type="text" id="input3" class="form-control"  [(ngModel)]="productRice">
+                </div>
+                  <div class="col-md-6">
+                  <label for="input4">id</label>
+                  <input type="text" id="input4" class="form-control"  [(ngModel)]="id">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="input5">Ürün Kategori</label>
+                  <div class="input-group">
+                      <select class="form-select" [(ngModel)]="productCategori">
+                        <option *ngFor="let veri of catego" [value]="veri.name" >{{ veri.name }}</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="input6">Ürün Alt Kategori</label>
+                  <div class="input-group">
+                      <select class="form-select" [(ngModel)]="productAltCategori">
+                        <option *ngFor="let veri of altCatego" [value]="veri.altName" >{{ veri.altName }}</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="button" class="btn btn-primary" (click)="updateProductModal()">Güncelle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
